@@ -33,7 +33,7 @@ export  function loadHeader(active){
   const $smLocationText=$('<div>');
   const $smLocationIcon=$('<img>');
 
-  $smNav.attr('class','md:hidden flex flex-col fixed self-end px-3 bg-white h-full sm-nav w-4/5');
+  $smNav.attr('class','hidden flex flex-col fixed self-end px-3 bg-white h-full md:hidden sm-nav w-4/5 ');
   $moreIcon.attr('class','more-icon block md:hidden');
   $header.attr('class','flex flex-col');
   $smJoin.attr('class','px-5 py-1 rounded-full border border-white text-white text-sm font-bold hover:bg-black transition duration-300 md:hidden');
@@ -141,8 +141,13 @@ export  function loadHeader(active){
     $stickyHeader.addClass('hidden');
 
   }
- 
-  $(document).on('click','.more-icon',()=>console.log('hi'));
+  //idk how to animate the menu appearing with tailwind and jquery
+  $(document).on('click','.more-icon',()=>{
+    document.querySelector('.sm-nav').classList.toggle('hidden');
+    $moreIcon.attr('src','src/assets/svgs/close-icon.svg');
+    $moreIcon.height('35');
+    
+  });
   $smNav.append($smBtngroup);
   $smSignInBtn.text('Sign in');
 
