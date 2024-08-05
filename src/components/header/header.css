@@ -6,3 +6,18 @@
     background-color: #1E3932;
     color: #F4F5F5;
 }
+li:hover,.location-text:hover{
+    cursor: pointer;
+    color: #288B66;
+}
+.sign-up-btn:hover{
+    background-color: #4C4C4C;
+    transition-duration: 300ms;
+}
+.sm-nav{
+    margin-top: 100px;
+    border: solid 2px #EAEAEA;
+}
+.sm-page-titles{
+    border-bottom: solid 2px #EAEAEA;
+}
