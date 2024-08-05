@@ -1,1 +1,3 @@
-$('h1').text('jQuery is working');
+import {loadHeader} from './components/header/header.js';
+
+loadHeader();
