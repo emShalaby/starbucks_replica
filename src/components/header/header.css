@@ -1,3 +1,8 @@
 .active{
     background-color: #00754A;
+    height: 6px;
+}
+.sticky-header{
+    background-color: #1E3932;
+    color: #F4F5F5;
 }
