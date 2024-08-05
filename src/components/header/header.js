@@ -20,12 +20,15 @@ export  function loadHeader(active){
   const $activeList=$('<span>');
   const $stickyHeader=$('<div>');
   const $smJoin=$('<button>');
+  const $moreIcon=$('<img>');
+  $moreIcon.attr('src','src/assets/svgs/more.svg');
+  $moreIcon.attr('class','block md:hidden');
   $header.attr('class','flex flex-col');
   $smJoin.attr('class','px-5 py-1 rounded-full border border-white text-white text-sm font-bold hover:bg-black transition duration-300 md:hidden');
   $stickyHeader.attr('class','sticky-header px-8 py-4 font-bold sticky flex justify-between');
   $stickyHeader.text('STARBUCKS® REWARDS');
   $smJoin.text('Join in the app');
-  $container.attr('class','container px-10 flex items-center md:flex-row  md:justify-between ');
+  $container.attr('class','justify-between px-10 flex items-center md:flex-row   ');
   $containerLeft.attr('class','flex gap-4 ');
   $containerRight.attr('class','flex gap-4');
   $icon.attr('src','src/assets/svgs/starbucks_icon.svg');
@@ -64,6 +67,7 @@ export  function loadHeader(active){
   $location.append($locationText);
   $containerRight.append($location);
   $containerRight.append($signing);
+  $containerRight.append($moreIcon);
   $containerLeft.append($icon);
   $containerLeft.append($pageTitles);
   $container.append($containerLeft);
