@@ -32,6 +32,7 @@ export  function loadHeader(active){
   const $smLocation=$('<div>');
   const $smLocationText=$('<div>');
   const $smLocationIcon=$('<img>');
+  const $closeIcon=$('<img>');
 
   $smNav.attr('class','hidden flex flex-col fixed self-end px-3 bg-white h-full md:hidden sm-nav w-4/5 ');
   $moreIcon.attr('class','more-icon block md:hidden');
@@ -62,11 +63,13 @@ export  function loadHeader(active){
   $smBtngroup.attr('class','mt-8 flex gap-5 px-3');
   $smSignUpBtn.attr('class',' px-5 py-1 rounded-full bg-black text-white rounded-full text-sm font-bold md:flex sign-up-btn');
   $smLocation.attr('class','flex gap-3 mt-5 px-3');
-  
+  $closeIcon.attr('class','hidden md:hidden close-icon');
+
   $moreIcon.attr('src','src/assets/svgs/more.svg');
   $icon.attr('src','src/assets/svgs/starbucks_icon.svg');
   $locationImg.attr('src','src/assets/svgs/location_icon.svg');
   $smLocationIcon.attr('src','src/assets/svgs/location_icon.svg');
+  $closeIcon.attr('src','src/assets/svgs/close-icon.svg');
 
   $header.append($container);
   $header.append($stickyHeader);
@@ -78,15 +81,16 @@ export  function loadHeader(active){
   $containerRight.append($location);
   $containerRight.append($signing);
   $containerRight.append($moreIcon);
+  $containerRight.append($closeIcon);
   $smBtngroup.append($smSignInBtn);
   $smBtngroup.append($smSignUpBtn);
   $smLocation.append($smLocationIcon);
   $smLocation.append($smLocationText);
-
   $smNav.append($smPagetitles);
   $smPagetitles.append($smMenu);
   $smPagetitles.append($smRewards);
   $smPagetitles.append($smGiftCards);
+
   $smGiftCards.text('GIFT CARDS');
   $smRewards.text('REWARDS');
   $smMenu.text('MENU');
@@ -141,13 +145,23 @@ export  function loadHeader(active){
     $stickyHeader.addClass('hidden');
 
   }
-  //idk how to animate the menu appearing with tailwind and jquery
-  $(document).on('click','.more-icon',()=>{
-    document.querySelector('.sm-nav').classList.toggle('hidden');
-    $moreIcon.attr('src','src/assets/svgs/close-icon.svg');
-    $moreIcon.height('35');
-    
+  $('html').on('click',()=> {
+    if (!$smNav.hasClass('hidden')) $smNav.addClass('hidden');
+    if (!$closeIcon.hasClass('hidden')) $closeIcon.toggleClass('hidden');
+    if ($moreIcon.hasClass('hidden')) $moreIcon.toggleClass('hidden');
   });
+  $moreIcon.parent().on('click',(e)=>e.stopPropagation());
+  $moreIcon.on('click',()=>{
+    $smNav.toggleClass('hidden');
+    $closeIcon.toggleClass('hidden');
+    $moreIcon.toggleClass('hidden')
+    ;});
+  $closeIcon.on('click',()=>{
+    $smNav.toggleClass('hidden');
+    $closeIcon.toggleClass('hidden');
+    $moreIcon.toggleClass('hidden');
+  });
+
   $smNav.append($smBtngroup);
   $smSignInBtn.text('Sign in');
 
@@ -156,5 +170,7 @@ export  function loadHeader(active){
   $smLocationIcon.width('20');
   $smNav.append($smLocation);
   $smLocationText.text('Find a store');
+  $closeIcon.height('40');
+  $closeIcon.width(20);
   
 }
