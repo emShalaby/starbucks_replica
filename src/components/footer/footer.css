@@ -2,3 +2,15 @@
     border-top: solid 4px #EAEAEA;
     border-bottom: solid 4px #EAEAEA;
 }
+.socials>*{
+    border-radius:100% ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+}
+.socials>*:hover{
+    background-color: #E9E9E9;
+    cursor: pointer;
+}

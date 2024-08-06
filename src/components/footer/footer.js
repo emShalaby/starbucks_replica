@@ -43,21 +43,41 @@ export function loadFooter(){
   const $orderOptions=$('<a>');
   const $orderExploring=$('<a>');
   const $arrowDown=$('<img>');
-  
+  const $socials=$('<div>');
+  const $spotify=$('<a>');
+  const $facebook=$('<a>');
+  const $pintrest=$('<a>');
+  const $instagram=$('<a>');
+  const $youtube=$('<a>');
+  const $twitter=$('<a>');
+  const $pintrestIcon=$('<img>');
+  const $spotifyIcon=$('<img>');
+  const $facebookIcon=$('<img>');
+  const $instagramIcon  =$('<img>');
+  const $youtubeIcon=$('<img>');
+  const $twitterIcon=$('<img>');
+
+  $socials.attr('class','flex p-5 gap-4 socials');
+  $twitterIcon.attr('src','src/assets/svgs/twitter-icon.svg');
+  $youtubeIcon.attr('src','src/assets/svgs/youtube-icon.svg');
+  $instagramIcon.attr('src','src/assets/svgs/instagram-icon.svg');
+  $pintrestIcon.attr('src','src/assets/svgs/pintrest-icon.svg');
+  $facebookIcon.attr('src','src/assets/svgs/facebook-icon.svg');
+  $spotifyIcon.attr('src','src/assets/svgs/spotify-icon.svg');
   $arrowDown.attr({'src':'src/assets/svgs/arrow-down.svg','class':'md:hidden'});
   $footer.attr('class','flex flex-col');
   $topContainer.attr('class','flex flex-col p-10 gap-16 md:grid md:grid-cols-5 md:py-10 md:pl-8 lg:pr-96 md:gap-6 footer-top');
   $bottomContainer.attr('class','flex flex-col footer-bottom');
-  $aboutUs.attr('class','flex flex-col md:gap-10 gap-8' );
-  $careers.attr('class','flex flex-col md:gap-10 gap-8');
-  $socialImpact.attr('class','flex flex-col md:gap-10 gap-8');
-  $businessPartners.attr('class','flex flex-col md:gap-10 gap-8');
-  $order.attr('class','flex flex-col md:gap-10 gap-8');
-  $aboutUsH2.attr('class','flex justify-between');
-  $careersH2.attr('class','flex justify-between');
-  $socialImpactH2.attr('class','flex justify-between');
-  $businessPartnersH2.attr('class','flex justify-between');
-  $orderH2.attr('class','flex justify-between');
+  $aboutUs.attr('class','flex flex-col md:gap-10 gap-8 hover:cursor-pointer' );
+  $careers.attr('class','flex flex-col md:gap-10 gap-8 hover:cursor-pointer');
+  $socialImpact.attr('class','flex flex-col md:gap-10 gap-8 hover:cursor-pointer');
+  $businessPartners.attr('class','flex flex-col md:gap-10 gap-8 hover:cursor-pointer');
+  $order.attr('class','flex flex-col md:gap-10 gap-8 hover:cursor-pointer');
+  $aboutUsH2.attr('class','text-lg font-semibold flex justify-between');
+  $careersH2.attr('class','text-lg font-semibold flex justify-between');
+  $socialImpactH2.attr('class','text-lg font-semibold flex justify-between');
+  $businessPartnersH2.attr('class','text-lg font-semibold flex justify-between');
+  $orderH2.attr('class','text-lg font-semibold flex justify-between');
   $aboutUsUl.attr('class',' hidden flex  md:flex flex-col gap-6');
   $careersUl.attr('class','hidden flex  md:flex flex-col gap-6');
   $socialImpactUl.attr('class',' hidden flex md:flex flex-col gap-6');
@@ -114,7 +134,6 @@ export function loadFooter(){
   $careersH2.append($arrowDown.clone());
   $socialImpactH2.append($arrowDown.clone());
   $businessPartnersH2.append($arrowDown.clone());
-
   $aboutUsUl.append($ourCompany);
   $aboutUsUl.append($ourCoffe);
   $aboutUsUl.append($stories);
@@ -144,7 +163,15 @@ export function loadFooter(){
   $orderUl.append($delivery);
   $orderUl.append($orderOptions);
   $orderUl.append($orderExploring);
-  $aboutUsUl.attr('id','about-h2');
+  $bottomContainer.append($socials);
+
+  $socials.append($spotify,$facebook,$pintrest,$instagram,$youtube,$twitter);
+  $spotify.append($spotifyIcon);
+  $facebook.append($facebookIcon);
+  $pintrest.append($pintrestIcon);
+  $instagram.append($instagramIcon);
+  $youtube.append($youtubeIcon);
+  $twitter.append($twitterIcon);
   $aboutUsH2.on('click',()=>{
   
     $aboutUsUl.toggleClass('hidden');
