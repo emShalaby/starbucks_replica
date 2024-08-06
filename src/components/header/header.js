@@ -62,7 +62,7 @@ export  function loadHeader(active){
   $smSignInBtn.attr('class',' px-5 py-1 rounded-full border border-black text-black text-sm font-bold hover:bg-gray-100 transition duration-300 md:flex');
   $smBtngroup.attr('class','mt-8 flex gap-5 px-3');
   $smSignUpBtn.attr('class',' px-5 py-1 rounded-full bg-black text-white rounded-full text-sm font-bold md:flex sign-up-btn');
-  $smLocation.attr('class','flex gap-3 mt-5 px-3');
+  $smLocation.attr('class','flex gap-3 mt-5 px-3 sm-location-text');
   $closeIcon.attr('class','hidden md:hidden close-icon');
 
   $moreIcon.attr('src','src/assets/svgs/more.svg');
