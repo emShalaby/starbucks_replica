@@ -37,8 +37,12 @@ export function loadFooter(){
   const $giftSales=$('<a>');
   const $office=$('<a>');
   const $orderUl=$('<ul>');
+  const $appOrder=$('<a>');
+  const $webOrder=$('<a>');
+  const $delivery=$('<a>');
+  const $orderOptions=$('<a>');
+  const $orderExploring=$('<a>');
 
-  
   $footer.attr('class','flex flex-col');
   $topContainer.attr('class','grid grid-cols-5 py-10 pl-8 pr-96 gap-6 footer-top');
   $bottomContainer.attr('class','flex flex-col footer-bottom');
@@ -83,6 +87,12 @@ export function loadFooter(){
   $suppliers.text('Suppliers');
   $giftSales.text('Corporate Gift Card Sales');
   $office.text('Office and Foodservice Coffee');
+  $appOrder.text('Order on the App');
+  $webOrder.text('Order on the Web');
+  $delivery.text('Delivery');
+  $orderOptions.text('Order and Pick Up Options');
+  $orderExploring.text('Explore and Find Coffe for Home');
+  
   $('#app').append($footer);
   $footer.append($topContainer);
   $footer.append($bottomContainer);
@@ -120,4 +130,10 @@ export function loadFooter(){
   $businessPartnersUl.append($suppliers);
   $businessPartnersUl.append($giftSales);
   $businessPartnersUl.append($office);
+  $order.append($orderUl);
+  $orderUl.append($appOrder);
+  $orderUl.append($webOrder);
+  $orderUl.append($delivery);
+  $orderUl.append($orderOptions);
+  $orderUl.append($orderExploring);
 }
