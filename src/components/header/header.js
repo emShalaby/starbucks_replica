@@ -33,8 +33,10 @@ export  function loadHeader(active){
   const $smLocationText=$('<div>');
   const $smLocationIcon=$('<img>');
   const $closeIcon=$('<img>');
-
-  $smNav.attr('class','hidden flex flex-col fixed self-end px-3 bg-white h-full md:hidden sm-nav w-4/5 ');
+  const $aboutUsBtn=$('<button>');
+  const $aboutUsSpan=$('<span>');
+  const arrowDown=$('<svg>');
+  $smNav.attr('class','translate-x-full transition-transform duration-500 ease-in-out flex flex-col fixed self-end px-3 bg-white h-full md:hidden sm-nav w-4/5 ');
   $moreIcon.attr('class','more-icon block md:hidden');
   $header.attr('class','flex flex-col');
   $smJoin.attr('class','px-5 py-1 rounded-full border border-white text-white text-sm font-bold hover:bg-black transition duration-300 md:hidden');
@@ -146,18 +148,18 @@ export  function loadHeader(active){
 
   }
   $('html').on('click',()=> {
-    if (!$smNav.hasClass('hidden')) $smNav.addClass('hidden');
+    if (!$smNav.hasClass('hidden')) $smNav.addClass('translate-x-full');
     if (!$closeIcon.hasClass('hidden')) $closeIcon.toggleClass('hidden');
     if ($moreIcon.hasClass('hidden')) $moreIcon.toggleClass('hidden');
   });
   $moreIcon.parent().on('click',(e)=>e.stopPropagation());
   $moreIcon.on('click',()=>{
-    $smNav.toggleClass('hidden');
+    $smNav.toggleClass('translate-x-full');
     $closeIcon.toggleClass('hidden');
     $moreIcon.toggleClass('hidden')
     ;});
   $closeIcon.on('click',()=>{
-    $smNav.toggleClass('hidden');
+    $smNav.toggleClass('translate-x-full');
     $closeIcon.toggleClass('hidden');
     $moreIcon.toggleClass('hidden');
   });

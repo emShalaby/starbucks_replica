@@ -44,23 +44,23 @@ export function loadFooter(){
   const $orderExploring=$('<a>');
 
   $footer.attr('class','flex flex-col');
-  $topContainer.attr('class','grid grid-cols-5 py-10 pl-8 pr-96 gap-6 footer-top');
+  $topContainer.attr('class','flex flex-col p-10 gap-5 md:grid md:grid-cols-5 md:py-10 md:pl-8 lg:pr-96 md:gap-6 footer-top');
   $bottomContainer.attr('class','flex flex-col footer-bottom');
-  $aboutUs.attr('class','flex flex-col gap-10');
-  $careers.attr('class','flex flex-col gap-10');
-  $socialImpact.attr('class','flex flex-col gap-10');
-  $businessPartners.attr('class','flex flex-col gap-10');
+  $aboutUs.attr('class','flex flex-col md:gap-10' );
+  $careers.attr('class','flex flex-col md:gap-10');
+  $socialImpact.attr('class','flex flex-col md:gap-10');
+  $businessPartners.attr('class','flex flex-col md:gap-10');
   $order.attr('class','flex flex-col gap-10');
   $aboutUsH2.attr('class','');
   $careersH2.attr('class','');
   $socialImpactH2.attr('class','');
   $businessPartnersH2.attr('class','');
   $orderH2.attr('class','');
-  $aboutUsUl.attr('class','flex flex-col gap-6');
-  $careersUl.attr('class','flex flex-col gap-6');
-  $socialImpactUl.attr('class','flex flex-col gap-6');
-  $businessPartnersUl.attr('class','flex flex-col gap-6');
-  $orderUl.attr('class','flex flex-col gap-6');
+  $aboutUsUl.attr('class',' hidden md:flex flex-col gap-6');
+  $careersUl.attr('class','hidden md:flex flex-col gap-6');
+  $socialImpactUl.attr('class',' hidden md:flex flex-col gap-6');
+  $businessPartnersUl.attr('class',' hidden md:flex flex-col gap-6');
+  $orderUl.attr('class','hidden md:flex flex-col gap-6');
 
   $aboutUsH2.text('About Us');
   $careersH2.text('Careers');
@@ -120,7 +120,7 @@ export function loadFooter(){
   $careersUl.append($college);
   $careersUl.append($alumni);
   $careersUl.append($usCareers);
-  $careers.append($internationalCareers);
+  $careersUl.append($internationalCareers);
   $socialImpact.append($socialImpactUl);
   $socialImpactUl.append($people);  
   $socialImpactUl.append($planet);
