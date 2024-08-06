@@ -42,25 +42,27 @@ export function loadFooter(){
   const $delivery=$('<a>');
   const $orderOptions=$('<a>');
   const $orderExploring=$('<a>');
-
+  const $arrowDown=$('<img>');
+  
+  $arrowDown.attr({'src':'src/assets/svgs/arrow-down.svg','class':'md:hidden'});
   $footer.attr('class','flex flex-col');
-  $topContainer.attr('class','flex flex-col p-10 gap-5 md:grid md:grid-cols-5 md:py-10 md:pl-8 lg:pr-96 md:gap-6 footer-top');
+  $topContainer.attr('class','flex flex-col p-10 gap-16 md:grid md:grid-cols-5 md:py-10 md:pl-8 lg:pr-96 md:gap-6 footer-top');
   $bottomContainer.attr('class','flex flex-col footer-bottom');
-  $aboutUs.attr('class','flex flex-col md:gap-10' );
-  $careers.attr('class','flex flex-col md:gap-10');
-  $socialImpact.attr('class','flex flex-col md:gap-10');
-  $businessPartners.attr('class','flex flex-col md:gap-10');
-  $order.attr('class','flex flex-col gap-10');
-  $aboutUsH2.attr('class','');
-  $careersH2.attr('class','');
-  $socialImpactH2.attr('class','');
-  $businessPartnersH2.attr('class','');
-  $orderH2.attr('class','');
-  $aboutUsUl.attr('class',' hidden md:flex flex-col gap-6');
-  $careersUl.attr('class','hidden md:flex flex-col gap-6');
-  $socialImpactUl.attr('class',' hidden md:flex flex-col gap-6');
-  $businessPartnersUl.attr('class',' hidden md:flex flex-col gap-6');
-  $orderUl.attr('class','hidden md:flex flex-col gap-6');
+  $aboutUs.attr('class','flex flex-col md:gap-10 gap-8' );
+  $careers.attr('class','flex flex-col md:gap-10 gap-8');
+  $socialImpact.attr('class','flex flex-col md:gap-10 gap-8');
+  $businessPartners.attr('class','flex flex-col md:gap-10 gap-8');
+  $order.attr('class','flex flex-col md:gap-10 gap-8');
+  $aboutUsH2.attr('class','flex justify-between');
+  $careersH2.attr('class','flex justify-between');
+  $socialImpactH2.attr('class','flex justify-between');
+  $businessPartnersH2.attr('class','flex justify-between');
+  $orderH2.attr('class','flex justify-between');
+  $aboutUsUl.attr('class',' hidden flex  md:flex flex-col gap-6');
+  $careersUl.attr('class','hidden flex  md:flex flex-col gap-6');
+  $socialImpactUl.attr('class',' hidden flex md:flex flex-col gap-6');
+  $businessPartnersUl.attr('class',' hidden flex md:flex flex-col gap-6');
+  $orderUl.attr('class','hidden flex md:flex flex-col gap-6');
 
   $aboutUsH2.text('About Us');
   $careersH2.text('Careers');
@@ -68,10 +70,10 @@ export function loadFooter(){
   $businessPartnersH2.text('For Business Partners');
   $orderH2.text('Order and Pick Up');
   $ourCompany.text('Our Company');
-  $ourCoffe.text('Our Coffe');
+  $ourCoffe.text('Our Coffee');
   $stories.text('Stories and News');
   $archive.text('Starbucks Archive');
-  $investors.text('Inverstor Realtions');
+  $investors.text('Investor Relations');
   $customerService.text('Customer Service');
   $contacts.text('Contact Us');
   $culture.text('Culture and Values');
@@ -91,8 +93,8 @@ export function loadFooter(){
   $webOrder.text('Order on the Web');
   $delivery.text('Delivery');
   $orderOptions.text('Order and Pick Up Options');
-  $orderExploring.text('Explore and Find Coffe for Home');
-  
+  $orderExploring.text('Explore and Find Coffee for Home');
+
   $('#app').append($footer);
   $footer.append($topContainer);
   $footer.append($bottomContainer);
@@ -107,6 +109,12 @@ export function loadFooter(){
   $businessPartners.append($businessPartnersH2);
   $order.append($orderH2);
   $aboutUs.append($aboutUsUl);
+  $aboutUsH2.append($arrowDown);
+  $orderH2.append($arrowDown.clone());
+  $careersH2.append($arrowDown.clone());
+  $socialImpactH2.append($arrowDown.clone());
+  $businessPartnersH2.append($arrowDown.clone());
+
   $aboutUsUl.append($ourCompany);
   $aboutUsUl.append($ourCoffe);
   $aboutUsUl.append($stories);
@@ -136,4 +144,23 @@ export function loadFooter(){
   $orderUl.append($delivery);
   $orderUl.append($orderOptions);
   $orderUl.append($orderExploring);
+  $aboutUsUl.attr('id','about-h2');
+  $aboutUsH2.on('click',()=>{
+  
+    $aboutUsUl.toggleClass('hidden');
+    
+  });
+  $careersH2.on('click',()=>{
+    $careersUl.toggleClass('hidden');
+  });
+  $socialImpactH2.on('click',()=>{
+    $socialImpactUl.toggleClass('hidden');
+  });
+  $businessPartnersH2.on('click',()=>{
+    $businessPartnersUl.toggleClass('hidden');
+  });
+  $orderH2.on('click',()=>{
+    $orderUl.toggleClass('hidden');
+  });
+  
 }

@@ -33,9 +33,7 @@ export  function loadHeader(active){
   const $smLocationText=$('<div>');
   const $smLocationIcon=$('<img>');
   const $closeIcon=$('<img>');
-  const $aboutUsBtn=$('<button>');
-  const $aboutUsSpan=$('<span>');
-  const arrowDown=$('<svg>');
+
   $smNav.attr('class','translate-x-full transition-transform duration-500 ease-in-out flex flex-col fixed self-end px-3 bg-white h-full md:hidden sm-nav w-4/5 ');
   $moreIcon.attr('class','more-icon block md:hidden');
   $header.attr('class','flex flex-col');
@@ -116,7 +114,7 @@ export  function loadHeader(active){
   $pageTitles.append($menu,$rewards,$giftCards);
   $location.append($locationImg);
   $location.append($locationText);
-
+ 
 
   $stickyHeader.append($smJoin);
   
