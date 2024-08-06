@@ -14,3 +14,7 @@
     background-color: #E9E9E9;
     cursor: pointer;
 }
+.footer-bottom a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
