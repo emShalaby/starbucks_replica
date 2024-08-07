@@ -15,7 +15,7 @@ export function loadExtrasModal(imgs, headers, text) {
   $img.width('200');
   $close.width('24');
   $close.height('24');
-  $circleButton.addClass('rounded-full bg-black');
+  $circleButton.addClass('rounded-full bg-[#1E3932]');
   $close.attr('src', 'src/assets/svgs/close-icon.svg');
   $close.addClass('hover:cursor-pointer');
   $layout.addClass(
@@ -37,9 +37,11 @@ export function loadExtrasModal(imgs, headers, text) {
       ).addClass('hidden')
     
     );
-    $control.append($circleButton.clone().on('click',()=>{
+    $control.append($circleButton.clone().on('click',(event)=>{
       $modal.children('.content').hide();
-      if($modal.children('.content').eq(i).is(':hidden')) $modal.children('.content').eq(i).show().css('display','flex').css('flex-direction','column');
+
+      
+      if($modal.children('.content').eq(i).is(':hidden')) $modal.children('.content').eq(i).css('display','flex');
     }));    
   }
   $modal.children('.content').eq(0).toggleClass('hidden');

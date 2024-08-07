@@ -32,83 +32,105 @@ export function loadExtras() {
     $div
       .clone()
       .append(
-        $divItem
-          .clone()
-          .append(
-            $img.clone().attr('src', 'src/assets/pngs/1-fun-freebies.png'),
-            $textDiv
+        $divItem.clone().append(
+          $img.clone().attr('src', 'src/assets/pngs/1-fun-freebies.png'),
+          $textDiv.clone().append(
+            $h2.clone().append('Fun freebies').addClass('font-bold'),
+            $p
               .clone()
               .append(
-                $h2.clone().append('Fun freebies').addClass('font-bold'),
-                $p
-                  .clone()
-                  .append(
-                    'Not only can you earn free coffee, look forward to a birthday treat plus coffee and tea refills.'
-                  ),
-                $a.clone()
-              )
-          ),
-        $divItem
-          .clone()
-          .append(
-            $img
+                'Not only can you earn free coffee, look forward to a birthday treat plus coffee and tea refills.'
+              ),
+            $a
               .clone()
-              .attr('src', 'src/assets/pngs/2-order-and-pay-ahead.png'),
-            $textDiv
-              .clone()
-              .append(
-                $h2.clone().append('Order & pay ahead').addClass('font-bold'),
-                $p
-                  .clone()
-                  .append(
-                    'Enjoy the convenience of in-store, curbside or drive-thru pickup at select stores.'
-                  ),
-                $a.clone()
-              )
-          ),
-        $divItem
-          .clone()
-          .append(
-            $img
-              .clone()
-              .attr('src', 'src/assets/pngs/3-get-to-free-faster.png'),
-            $textDiv
-              .clone()
-              .append(
-                $h2.clone().append('Get to free faster').addClass('font-bold'),
-                $p
-                  .clone()
-                  .append(
-                    'Earn Stars even quicker with Bonus Star challenges, Double Star Days and exciting games.'
-                  ),
-                $a.clone()
+              .on('click', () =>
+                loadExtrasModal(
+                  [
+                    'src/assets/pngs/A1.png',
+                    'src/assets/pngs/A2.png',
+                    'src/assets/pngs/A3.png',
+                  ],
+                  [
+                    'Free food, drinks & more',
+                    ' Complimentary birthday treat',
+                    'Brewed coffee & tea refills on us',
+                  ],
+                  [
+                    'Redeem your Stars for favorites like a handcrafted cold brew, protein box or even a coffee tumbler.',
+                    'Every year on your birthday get a free drink or food item of your choice',
+                    'More  Caffè Verona® Blend, please. We’re happy to refill your hot cup while you’re in the store. Just ask.',
+                  ]
+                )
               )
           )
+        ),
+        $divItem.clone().append(
+          $img.clone().attr('src', 'src/assets/pngs/2-order-and-pay-ahead.png'),
+          $textDiv.clone().append(
+            $h2.clone().append('Order & pay ahead').addClass('font-bold'),
+            $p
+              .clone()
+              .append(
+                'Enjoy the convenience of in-store, curbside or drive-thru pickup at select stores.'
+              ),
+            $a
+              .clone()
+              .on('click', () =>
+                loadExtrasModal(
+                  [
+                    'src/assets/pngs/B1.png',
+                    'src/assets/pngs/B2.png',
+
+                  ],
+                  [
+                    'Tap,go.',
+                    'Just for you',
+                  ],
+                  [
+                    'Select your menu items in the app along with your store location. Then tell the barista your name when you swing by the pickup area to grab your order',
+                    'Our app lets you customize your order and track an estimated pickup time. Make sure to save your favorites so they’re all ready for your next order.',
+                  ]
+                )
+              )
+          )
+        ),
+        $divItem.clone().append(
+          $img.clone().attr('src', 'src/assets/pngs/3-get-to-free-faster.png'),
+          $textDiv.clone().append(
+            $h2.clone().append('Get to free faster').addClass('font-bold'),
+            $p
+              .clone()
+              .append(
+                'Earn Stars even quicker with Bonus Star challenges, Double Star Days and exciting games.'
+              ),
+            $a
+              .clone()
+              .on('click', () =>
+                loadExtrasModal(
+                  [
+                    'src/assets/pngs/C1.png',
+                    'src/assets/pngs/C2.png',
+                    'src/assets/pngs/C3.png',
+                  ],
+                  [
+                    'Bonus Star challenges',
+                    'Double Star Days',
+                    'Member-only games',
+                  ],
+                  [
+                    'Rack up the Stars with regular opportunities to get rewarded for what you love.',
+                    'Watch for those special days where you’ll earn twice the Stars on almost everything.',
+                    'Play for a chance to win exclusive prizes, free food and drinks, and more.',
+                  ]
+                )
+              )
+          )
+        )
       )
       .addClass(
         'flex flex-col md:flex-row gap-5 px-2 md:px-20 steps md:text-center mt-5'
       )
   );
 
-  $('#app').append(
-    $extras.on('click', () =>
-      loadExtrasModal(
-        [
-          'src/assets/pngs/A1.png',
-          'src/assets/pngs/A2.png',
-          'src/assets/pngs/A3.png',
-        ],
-        [
-          'Free food, drinks & more',
-          ' Complimentary birthday treat',
-          'Brewed coffee & tea refills on us',
-        ],
-        [
-          'Redeem your Stars for favorites like a handcrafted cold brew, protein box or even a coffee tumbler.',
-          'Every year on your birthday get a free drink or food item of your choice',
-          'More  Caffè Verona® Blend, please. We’re happy to refill your hot cup while you’re in the store. Just ask.'
-        ]
-      )
-    )
-  );
+  $('#app').append($extras);
 }
