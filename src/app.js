@@ -3,9 +3,10 @@ import { loadFooter } from './components/footer/footer.js';
 import {loadBanner} from './components/banner/banner.js';
 import { loadStart } from './components/start/start.js';
 import { loadExtras } from './components/extras/extras.js';
+import { loadRewards } from './components/rewards-banner/rewards.js';
 loadHeader('rewards');
 loadBanner();
 loadStart();
 loadExtras();
-
+loadRewards();
 loadFooter();
