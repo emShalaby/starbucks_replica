@@ -10,7 +10,7 @@ export function loadPayments() {
   $item.addClass('md:flex');
   $items.addClass('md:grid md:grid-rows-2 md:grid-cols-12 md:mt-auto  md:place-items-start flex flex-col gap-10 self-start pl-3 ');
   $payments.addClass(
-    'bg-[#F2F0EB] md:h-[40rem]  w-full md:p-10 flex flex-col  md:text-center place-items-center gap-5'
+    'bg-[#F2F0EB] md:h-[40rem]  w-full md:p-10 p-5 flex flex-col  md:text-center place-items-center gap-5'
   );
   $items.append(
     $item
@@ -29,7 +29,7 @@ export function loadPayments() {
     $item
       .clone()
       .append(
-        $img.clone().attr('src', 'src/assets/pngs/D1.png'),
+        $img.clone().attr('src', 'src/assets/pngs/D2.png'),
         $div.clone().append($h2.clone().append('Scan and pay separately').addClass('font-semibold text-xl'),
           $p.clone().append('Use cash or credit/debt card at the register')).addClass('md:flex flex-col gap-5')
       ).addClass('text-start col-span-5 flex gap-5'),
@@ -42,14 +42,14 @@ export function loadPayments() {
     $item
       .clone()
       .append(
-        $img.clone().attr('src', 'src/assets/pngs/D1.png'),
+        $img.clone().attr('src', 'src/assets/pngs/D3.png'),
         $div.clone().append($h2.clone().append('Scan and pay separately').addClass('text-xl font-semibold'),
           $p.clone().append('Use cash or credit/debt card at the register')).addClass('md:flex flex-col gap-5')
       ).addClass('text-start col-span-5 flex gap-5'),
     $item
       .clone()
       .append(
-        $img.clone().attr('src', 'src/assets/pngs/D1.png'),
+        $img.clone().attr('src', 'src/assets/pngs/D4.png'),
         $div.clone().append($h2.clone().append('Scan and pay separately').addClass('text-xl font-semibold'),
           $p.clone().append('Use cash or credit/debt card at the register')).addClass('md:flex flex-col gap-5')
       ).addClass('text-start col-span-5 flex gap-5')

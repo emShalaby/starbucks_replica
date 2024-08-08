@@ -11,7 +11,10 @@ export function loadRewards() {
   $item.addClass('flex md:flex-col place-items-center gap-5');
   $a.addClass('underline hover:no-underline');
   $btn.text('Join Starbucks® Rewards');
-  $btn.addClass('bg-[#158159] text-white rounded-full py-2 px-4 font-bold md:mt-auto text-sm md:text-base');
+  $btn.addClass('bg-[#158159] text-white rounded-full py-2 px-4 font-bold mt-5 text-sm md:text-base');
+  $rewards.addClass(
+    'md:p-9 bg-[url(\'src/assets/pngs/rewards-bg.png\')] w-full object-contain '
+  );
   $rewards.append(
     $div
       .clone()
@@ -63,11 +66,9 @@ export function loadRewards() {
           .addClass('md:flex-row flex flex-col gap-10 md:mt-10'),$btn
       )
       .addClass(
-        'flex flex-col h-[100%] w-[100%] bg-[#D4E9E2] place-items-center md:text-center p-5 md:p-10 gap-10 md:gap-5 '
+        'flex flex-col h-[100%] w-[100%] bg-[#D4E9E2] place-items-center md:text-center p-5 md:p-10 gap-5 '
       )
   );
-  $rewards.addClass(
-    'md:p-9 bg-[url(\'src/assets/pngs/rewards-bg.png\')] w-full h-[37.5rem]'
-  );
+
   $('#app').append($rewards);
 }
