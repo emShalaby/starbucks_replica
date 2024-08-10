@@ -8,11 +8,14 @@ export function loadMenu() {
   const $items = $('<div>');
   const $item = $('<div>');
   const $p = $('<p>');
+  const $active=$('<div>');
   
   $button.addClass('text-2xl font-semibold py-2 px-10');
   $span.addClass('text-[#CBA258] text-base');
   $menu.addClass('flex flex-col place-items-center bg-[#F1F8F5] gap-10 p-10');
   $items.addClass('bg-[#D4E9E2]');
+  $active.addClass('h-[2px] bg-black w-[100%]');
+ 
   $items.append(
     $item
       .clone()
@@ -56,22 +59,27 @@ export function loadMenu() {
       $div
         .clone()
         .append(
-          $button
-            .clone()
-            .append('25', $span.clone().append('★'))
-            .addClass('border-black border-b-2 border-solid'),
-          $button
-            .clone()
-            .append('25', $span.clone().append('★'))
-            .addClass('border-black border-b-2 border-solid'),
-          $button
-            .clone()
-            .append('25', $span.clone().append('★'))
-            .addClass('border-black border-b-2 border-solid'),
-          $button
-            .clone()
-            .append('25', $span.clone().append('★'))
-            .addClass('border-black border-b-2 border-solid')
+          $div.clone().append(
+            $button
+              .clone()
+              .append('25', $span.clone().append('★'))
+            ,$active),
+          $div.clone().append(
+            $button
+              .clone()
+              .append('25', $span.clone().append('★')),
+            $active.clone()
+          ),
+          $div.clone().append(
+            $button
+              .clone()
+              .append('25', $span.clone().append('★')),$active.clone()
+          ),
+          $div.clone().append(
+            $button
+              .clone()
+              .append('25', $span.clone().append('★')),$active.clone()
+          )   
         )
         .addClass('flex'),
       $items
