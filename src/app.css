@@ -1,0 +1,6 @@
+@import url("/src/components/header/header.css");
+@import url('/src/components/footer/footer.css');
+
+*{
+    font-family: Sora;
+}

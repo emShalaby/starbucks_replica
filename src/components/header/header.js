@@ -1,3 +1,4 @@
+import { loadSubheader } from './subheader.js';
 export function loadHeader(active) {
   const $header = $('<div>');
   const $container = $('<div>');
@@ -20,25 +21,12 @@ export function loadHeader(active) {
   const $activeList = $('<span>');
   const $stickyHeader = $('<div>');
   const $smJoin = $('<button>');
-  const $moreIcon = $('<img>');
-  const $smNav = $('<div>');
-  const $smPagetitles = $('<ul>');
-  const $smMenu = $('<li>');
-  const $smRewards = $('<li>');
-  const $smGiftCards = $('<li>');
-  const $smBtngroup = $('<div>');
-  const $smSignInBtn = $('<button>');
-  const $smSignUpBtn = $('<button>');
-  const $smLocation = $('<div>');
-  const $smLocationText = $('<div>');
-  const $smLocationIcon = $('<img>');
-  const $closeIcon = $('<img>');
+  const $hamburgerIcon = $('<img>');
+  const $closeIcon=$('<img>');
+  
 
-  $smNav.attr(
-    'class',
-    'translate-x-full transition-transform duration-500 ease-in-out flex flex-col fixed self-end px-3 bg-white h-full md:hidden sm-nav w-4/5 '
-  );
-  $moreIcon.attr('class', 'more-icon block md:hidden');
+  $hamburgerIcon.attr('class', 'more-icon block md:hidden hover:bg=[#F0F0F0] hover:rounded-[70%] hover:cursor-pointer');
+  $closeIcon.addClass('hidden md:hidden hover:bg=[#F0F0F0] hover:rounded-[70%] hover:cursor-pointer');
   $header.attr('class', 'flex flex-col');
   $smJoin.attr(
     'class',
@@ -73,54 +61,25 @@ export function loadHeader(active) {
   );
   $activeList.attr('class', 'absolute bottom-0 left-0 w-full  block active');
   $locationText.attr('class', 'font-bold text-sm location-text');
-  $smPagetitles.attr(
-    'class',
-    'flex flex-col  font-bold  pb-8 mt-4 sm-page-titles'
-  );
-  $smMenu.attr('class', 'px-6 py-5');
-  $smRewards.attr('class', 'px-6 py-5');
-  $smGiftCards.attr('class', 'px-6 py-5 ');
-  $smSignInBtn.attr(
-    'class',
-    ' px-5 py-1 rounded-full border border-black text-black text-sm font-bold hover:bg-gray-100 transition duration-300 md:flex'
-  );
-  $smBtngroup.attr('class', 'mt-8 flex gap-5 px-3');
-  $smSignUpBtn.attr(
-    'class',
-    ' px-5 py-1 rounded-full bg-black text-white rounded-full text-sm font-bold md:flex sign-up-btn'
-  );
-  $smLocation.attr('class', 'flex gap-3 mt-5 px-3 sm-location-text');
-  $closeIcon.attr('class', 'hidden md:hidden close-icon');
 
-  $moreIcon.attr('src', 'src/assets/svgs/more.svg');
+
+  $hamburgerIcon.attr('src', 'src/assets/svgs/more.svg');
+  $closeIcon.attr('src','src/assets/svgs/close-icon.svg');
   $icon.attr('src', 'src/assets/svgs/starbucks_icon.svg');
   $locationImg.attr('src', 'src/assets/svgs/location_icon.svg');
-  $smLocationIcon.attr('src', 'src/assets/svgs/location_icon.svg');
-  $closeIcon.attr('src', 'src/assets/svgs/close-icon.svg');
+
 
   $header.append($container);
   $header.append($stickyHeader);
-  $header.append($smNav);
   $container.append($containerLeft);
   $container.append($containerRight);
   $containerLeft.append($icon);
   $containerLeft.append($pageTitles);
   $containerRight.append($location);
   $containerRight.append($signing);
-  $containerRight.append($moreIcon);
+  $containerRight.append($hamburgerIcon);
   $containerRight.append($closeIcon);
-  $smBtngroup.append($smSignInBtn);
-  $smBtngroup.append($smSignUpBtn);
-  $smLocation.append($smLocationIcon);
-  $smLocation.append($smLocationText);
-  $smNav.append($smPagetitles);
-  $smPagetitles.append($smMenu);
-  $smPagetitles.append($smRewards);
-  $smPagetitles.append($smGiftCards);
 
-  $smGiftCards.text('GIFT CARDS');
-  $smRewards.text('REWARDS');
-  $smMenu.text('MENU');
 
   $locationImg.height('30');
   $locationImg.width('25');
@@ -145,6 +104,7 @@ export function loadHeader(active) {
   $stickyHeader.append($smJoin);
 
   $('#app').append($header);
+  loadSubheader($hamburgerIcon,$closeIcon);
   if (active == 'rewards') {
     if ($menu.children('.active')) $menu.children('.active').remove;
     if ($menu.children('.active')) $menu.children('.active').remove();
@@ -163,31 +123,5 @@ export function loadHeader(active) {
     $giftCards.append($activeList);
     $stickyHeader.addClass('hidden');
   }
-  $('html').on('click', () => {
-    if (!$smNav.hasClass('hidden')) $smNav.addClass('translate-x-full');
-    if (!$closeIcon.hasClass('hidden')) $closeIcon.toggleClass('hidden');
-    if ($moreIcon.hasClass('hidden')) $moreIcon.toggleClass('hidden');
-  });
-  $moreIcon.parent().on('click', (e) => e.stopPropagation());
-  $moreIcon.on('click', () => {
-    $smNav.toggleClass('translate-x-full');
-    $closeIcon.toggleClass('hidden');
-    $moreIcon.toggleClass('hidden');
-  });
-  $closeIcon.on('click', () => {
-    $smNav.toggleClass('translate-x-full');
-    $closeIcon.toggleClass('hidden');
-    $moreIcon.toggleClass('hidden');
-  });
 
-  $smNav.append($smBtngroup);
-  $smSignInBtn.text('Sign in');
-
-  $smSignUpBtn.text('Join Now');
-
-  $smLocationIcon.width('20');
-  $smNav.append($smLocation);
-  $smLocationText.text('Find a store');
-  $closeIcon.height('40');
-  $closeIcon.width(20);
 }

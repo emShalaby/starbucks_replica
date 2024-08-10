@@ -11,13 +11,13 @@ export function loadBanner() {
   const $div = $('<div>');
   $star.attr('src', 'src/assets/pngs/star-img.png');
   $star.addClass(
-    ' mr-[-85%] mb-[-20%] scale-125 md:scale-100 md:mb-0 md:mr-[-34%] md:w-[87%] '
+    ' mr-[-85%] mb-[-20%] scale-150 md:scale-125 md:mb-0 md:mr-[-34%] md:w-[87%] '
   );
   $banner.addClass(
-    'banner overflow-hidden  flex flex-col gap-36 pt-20 md:pt-0 justify-between md:flex-row px-10 bg-[#D4E9E2] items-center '
+    'banner overflow-hidden  flex flex-col gap-36  justify-between md:flex-row px-10 bg-[#D4E9E2] items-center '
   );
   $bannerText.addClass(
-    '  text-center md:text-start self-center justify-self-center w-72  flex flex-col gap-8 font-semibold'
+    '  text-center md:text-start self-center justify-self-center w-72  flex flex-col gap-8 font-semibold mt-10 mb-5'
   );
   $h2.text('FREE COFFEE IS A TAP AWAY');
   $p.text('Join now to start earning Rewards');
