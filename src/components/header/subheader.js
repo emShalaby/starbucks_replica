@@ -47,7 +47,7 @@ export function loadSubheader(openIcon,closeIcon) {
 
   
   $layout.addClass(
-    ' top-0 right-0 w-[100vw] h-[100vh]  bg-[#00000080] justify-center place-items-center hidden'
+    ' md:hidden top-0 right-0 w-[100vw] h-[100vh]  bg-[#00000080] justify-center place-items-center hidden'
   );
   $subHeader.addClass(
     'border-t-2 border-solid border-t-[#EAEAEA] translate-x-full mt-[100px] top-0 right-0 transition-transform duration-500 ease-in-out flex-col fixed self-end px-3 overflow-hidden bg-white h-[100vh] md:hidden sm-nav w-4/5 '
@@ -57,13 +57,15 @@ export function loadSubheader(openIcon,closeIcon) {
     if (!closeIcon.hasClass('hidden')) closeIcon.toggleClass('hidden');
     if (openIcon.hasClass('hidden')) openIcon.toggleClass('hidden');
     $('body').removeClass('overflow-hidden');
+    $layout.hide();
+
     
     // $layout.hide();
   });
   openIcon.parent().on('click', (e) => e.stopPropagation());
   openIcon.on('click', () => {
     $layout.show();
-    setTimeout(()=>$subHeader.toggleClass('translate-x-full'),1);
+    $subHeader.toggleClass('translate-x-full');
     closeIcon.toggleClass('hidden');
     openIcon.toggleClass('hidden');
     $('body').addClass('overflow-hidden');
@@ -71,7 +73,7 @@ export function loadSubheader(openIcon,closeIcon) {
   });
   closeIcon.on('click', () => {
     $subHeader.toggleClass('translate-x-full');
-    setTimeout(()=>$layout.hide(),500);
+    $layout.hide();
 
     closeIcon.toggleClass('hidden');
     openIcon.toggleClass('hidden');
@@ -80,8 +82,7 @@ export function loadSubheader(openIcon,closeIcon) {
   });
   
   $subHeader.append($smPagetitles,$smBtngroup,$smLocation,$smBtngroup);
-  $layout.append($subHeader);
   
 
-  $('#app').append($layout);
+  $('#app').append($layout,$subHeader);
 }
