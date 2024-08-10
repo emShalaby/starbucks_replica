@@ -1,5 +1,5 @@
 import { loadSubheader } from './subheader.js';
-export function loadHeader(active) {
+export function loadHeader() {
   const $header = $('<div>');
   const $container = $('<div>');
   const $icon = $('<img>');
@@ -25,16 +25,15 @@ export function loadHeader(active) {
   const $closeIcon=$('<img>');
   
 
-  $hamburgerIcon.attr('class', 'more-icon block md:hidden hover:bg=[#F0F0F0] hover:rounded-[70%] hover:cursor-pointer');
+  $hamburgerIcon.attr('class', 'more-icon block md:hidden hover:bg-[#F0F0F0] hover:rounded-[70%] hover:cursor-pointer');
   $closeIcon.addClass('hidden md:hidden hover:bg=[#F0F0F0] hover:rounded-[70%] hover:cursor-pointer');
   $header.attr('class', 'flex flex-col');
   $smJoin.attr(
     'class',
     'px-5 py-1 rounded-full border border-white text-white text-sm font-bold hover:bg-black transition duration-300 md:hidden'
   );
-  $stickyHeader.attr(
-    'class',
-    'sticky-header md:px-8 px-5 py-4 font-bold sticky flex justify-between'
+  $stickyHeader.addClass(
+    'bg-[#1E3932] text-[#F4F5F5] sticky-header md:px-8 px-5 py-4 font-bold sticky flex justify-between'
   );
   $stickyHeader.text('STARBUCKS® REWARDS');
   $smJoin.text('Join in the app');
@@ -42,10 +41,10 @@ export function loadHeader(active) {
     'class',
     'justify-between px-10 flex items-center md:flex-row   '
   );
-  $containerLeft.attr('class', 'flex gap-4 ');
+  $containerLeft.attr('class', 'flex gap-4');
   $containerRight.attr('class', 'flex gap-4');
   $icon.attr('class', 'flex items-center m-2 my-6');
-  $pageTitles.attr('class', 'hidden md:flex  ml-3 font-bold text-sm gap-3');
+  $pageTitles.attr('class', '[&_li:hover]:text-[#288B66] [&_li:hover]:cursor-pointer hidden md:flex  ml-3 font-bold text-sm gap-3');
   $rewards.attr('class', 'flex items-center relative px-1');
   $giftCards.attr('class', 'flex items-center relative px-1');
   $menu.attr('class', 'flex items-center relative px-1');
@@ -55,12 +54,11 @@ export function loadHeader(active) {
     'class',
     'hidden px-5 py-1 rounded-full border border-black text-black text-sm font-bold hover:bg-gray-100 transition duration-300 md:flex'
   );
-  $signUp.attr(
-    'class',
-    'hidden px-5 py-1 rounded-full bg-black text-white rounded-full text-sm font-bold md:flex sign-up-btn'
+  $signUp.addClass(
+    'hover:bg[#4C4C4C] transition duration-300 hidden px-5 py-1 bg-black text-white rounded-full text-sm font-bold md:flex sign-up-btn'
   );
-  $activeList.attr('class', 'absolute bottom-0 left-0 w-full  block active');
-  $locationText.attr('class', 'font-bold text-sm location-text');
+  $activeList.attr('class', 'absolute bottom-0 left-0 w-full  block h-[6px] bg-[#00754A]');
+  $locationText.addClass('hover:cursor-pointer hover:text-[#288B66] font-bold text-sm location-text');
 
 
   $hamburgerIcon.attr('src', 'src/assets/svgs/more.svg');
@@ -105,23 +103,6 @@ export function loadHeader(active) {
 
   $('#app').append($header);
   loadSubheader($hamburgerIcon,$closeIcon);
-  if (active == 'rewards') {
-    if ($menu.children('.active')) $menu.children('.active').remove;
-    if ($menu.children('.active')) $menu.children('.active').remove();
-    if ($menu.children('.active')) $menu.children('.active').remove();
-    $rewards.append($activeList);
-  } else if (active == 'menu') {
-    if ($menu.children('.active')) $menu.children('.active').remove;
-    if ($menu.children('.active')) $menu.children('.active').remove();
-    if ($menu.children('.active')) $menu.children('.active').remove();
-    $menu.append($activeList);
-    $stickyHeader.addClass('hidden');
-  } else {
-    if ($menu.children('.active')) $menu.children('.active').remove;
-    if ($menu.children('.active')) $menu.children('.active').remove();
-    if ($menu.children('.active')) $menu.children('.active').remove();
-    $giftCards.append($activeList);
-    $stickyHeader.addClass('hidden');
-  }
+
 
 }

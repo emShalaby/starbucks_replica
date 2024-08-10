@@ -7,7 +7,7 @@ import { loadRewards } from './components/rewards-banner/rewards.js';
 import { loadPayments } from './components/payments/payments.js';
 import { loadMenu } from './components/menu/menu.js';
 import { loadQuestions } from './components/questions/questions.js';
-loadHeader('rewards');
+loadHeader();
 loadBanner();
 loadStart();
 loadMenu();

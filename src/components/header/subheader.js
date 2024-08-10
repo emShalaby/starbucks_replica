@@ -12,7 +12,7 @@ export function loadSubheader(openIcon,closeIcon) {
   const $smLocationText = $('<div>');
   const $smLocationIcon = $('<img>');
 
-  $smPagetitles.addClass('flex flex-col  font-bold  pb-8 mt-4 sm-page-titles');
+  $smPagetitles.addClass('flex flex-col  font-bold  pb-8 mt-4 sm-page-titles border-b-2 border-solid border-b-[#EAEAEA]');
   
   $smPagetitles.append($smMenu, $smRewards, $smGiftCards);
 
@@ -38,6 +38,7 @@ export function loadSubheader(openIcon,closeIcon) {
 
   $smLocationText.text('Find a store');
 
+  $smLocationText.addClass('hover:text-[green] hover:cursor-pointer');
 
   $smBtngroup.addClass('mt-8 flex gap-5 px-3');
 
@@ -46,10 +47,10 @@ export function loadSubheader(openIcon,closeIcon) {
 
   
   $layout.addClass(
-    ' top-0 right-0  w-[100vw] h-[100vh]  bg-[#00000080] justify-center place-items-center hidden'
+    ' top-0 right-0 w-[100vw] h-[100vh]  bg-[#00000080] justify-center place-items-center hidden'
   );
   $subHeader.addClass(
-    ' translate-x-full top-0 right-0 transition-transform duration-500 ease-in-out flex-col fixed self-end px-3 overflow-hidden bg-white h-[100vh] md:hidden sm-nav w-4/5 '
+    'border-t-2 border-solid border-t-[#EAEAEA] translate-x-full mt-[100px] top-0 right-0 transition-transform duration-500 ease-in-out flex-col fixed self-end px-3 overflow-hidden bg-white h-[100vh] md:hidden sm-nav w-4/5 '
   );
   $('html').on('click', () => {
     if (!$subHeader.hasClass('hidden')) $subHeader.addClass('translate-x-full');

@@ -60,7 +60,7 @@ export function loadFooter() {
   const $notice = $('<a>');
   const $footNote = $('<p>');
   $footNote.attr('class','p-7 text-xs');
-  $socials.addClass('flex p-5 gap-2 socials [&_*]:rounded-full   [&_*]:flex [&_*]:place-items-center [&_*]:justify-center [&_*]:p-1 ');
+  $socials.addClass('flex p-5 gap-2 socials [&_*]:rounded-full [&_*:hover]:bg-[#E9E9E9]  [&_*]:flex [&_*]:place-items-center [&_*]:justify-center [&_*]:p-1 ');
   $twitterIcon.attr('src', 'src/assets/svgs/twitter-icon.svg');
   $youtubeIcon.attr('src', 'src/assets/svgs/youtube-icon.svg');
   $instagramIcon.attr('src', 'src/assets/svgs/instagram-icon.svg');
@@ -76,7 +76,7 @@ export function loadFooter() {
   $topContainer.addClass(
     'flex flex-col p-10 gap-16 md:grid md:grid-cols-5 md:py-10 md:pl-8 lg:pr-96 md:gap-6 footer-top border-t-4  border-b-[#EAEAEA] border-t-[#EAEAEA] border-solid border-b-4 '
   );
-  $bottomContainer.attr('class', 'flex flex-col footer-bottom gap-3  pb-40');
+  $bottomContainer.attr('class', 'flex flex-col [&>*>a:hover]:cursor-pointer [&>*>a:hover]:underline gap-3  pb-40');
   $aboutUs.attr('class', 'flex flex-col md:gap-10 gap-8 hover:cursor-pointer');
   $careers.attr('class', 'flex flex-col md:gap-10 gap-8 hover:cursor-pointer');
   $socialImpact.attr(
