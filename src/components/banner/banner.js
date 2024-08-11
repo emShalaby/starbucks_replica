@@ -38,8 +38,7 @@ export function loadBanner() {
       .clone()
       .text('Join in the app')
       .toggleClass('hidden')
-      .addClass('md:hidden ')
-    ,
+      .addClass('md:hidden '),
     $div.append(
       $a
         .clone()

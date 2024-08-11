@@ -20,8 +20,9 @@ export function loadSignUp() {
   const $cardsButton = $('<button>');
   const $button = $('<button>');
   const $arrowIcon = $('<img>');
-  const $span=$('<span>');
-  $button.attr('type','button');
+  const $span = $('<span>');
+  const $img = $('<$img>');
+  $button.attr('type', 'button');
   $cardsButton.attr('type', 'button');
   $cardsButton.on('click', (e) => {
     if ($('.cards-option').is(':hidden')) $('.cards-option').slideDown();
@@ -180,10 +181,79 @@ export function loadSignUp() {
         )
         .addClass('hidden cards-option')
     ),
-    $fieldset.clone().append($p.clone().append('COLLECT MORE STARS & EARN REWARDS').addClass('text-gray-400 font-semibold text-sm mt-5'),$p.clone().append('Email is a great way to know about offers and what\'s new from Starbucks.').addClass('mt-5 max-w-80 text-sm')),
-    $fieldset.clone().append($h2.clone().append('TERMS OF USE').addClass('text-gray-400 mt-8')),
-    $button.append('Create account').addClass('rounded-full bg-[#00754A] place-self-end text-white font-bold px-5 py-4 text-lg mt-8')
-
+    $fieldset.clone().append(
+      $p
+        .clone()
+        .append('COLLECT MORE STARS & EARN REWARDS')
+        .addClass('text-gray-400 font-semibold text-sm mt-5'),
+      $p
+        .clone()
+        .append(
+          'Email is a great way to know about offers and what\'s new from Starbucks.'
+        )
+        .addClass('mt-5 max-w-80 text-sm'),
+      $div
+        .clone()
+        .append(
+          $button
+            .clone()
+            .append()
+            .addClass(
+              'min-w-5   h-5 border-solid border-green-300 border-2 rounded-md'
+            ),
+          $div
+            .clone()
+            .append(
+              $p.clone().append('Yes, i\'d like email from Starbucks'),
+              $p
+                .clone()
+                .append(
+                  'Know about initiatives, announcements and product offers.'
+                )
+                .addClass('mt-3 text-sm text-gray-400')
+            )
+        )
+        .addClass('flex mt-5 gap-3')
+    ),
+    $fieldset.clone().append(
+      $p
+        .clone()
+        .append('TERMS OF USE')
+        .addClass('text-gray-400 font-semibold text-sm mt-5'),
+      $p
+        .clone()
+        .append(
+          'Email is a great way to know about offers and what\'s new from Starbucks.'
+        )
+        .addClass('mt-5 max-w-80 text-sm'),
+      $div
+        .clone()
+        .append(
+          $button
+            .clone()
+            .append()
+            .addClass(
+              'min-w-5   h-5 border-solid border-green-300 border-2 rounded-md'
+            ),
+          $div
+            .clone()
+            .append(
+              $p.clone().append('Yes, i\'d like email from Starbucks'),
+              $p
+                .clone()
+                .append(
+                  ' I agree to the Starbucks® Rewards Terms and the '
+                )
+                .addClass('mt-3 text-sm text-gray-400')
+            )
+        )
+        .addClass('flex mt-5 gap-3')
+    ),
+    $button
+      .append('Create account')
+      .addClass(
+        'rounded-full bg-[#00754A] place-self-end text-white font-bold px-5 py-4 text-lg mt-8'
+      )
   );
   $main
     .append(

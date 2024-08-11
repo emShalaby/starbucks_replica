@@ -24,7 +24,7 @@ export function loadHeader() {
   const $smJoin = $('<button>');
   const $hamburgerIcon = $('<img>');
   const $closeIcon=$('<img>');
-  
+  $header.load('src/components/header/wtf.html');
   $signUp.on('click',()=> loadSignUp());
   $hamburgerIcon.attr('class', 'more-icon block md:hidden hover:bg-[#F0F0F0] hover:rounded-[70%] hover:cursor-pointer');
   $closeIcon.addClass('hidden md:hidden hover:bg=[#F0F0F0] hover:rounded-[70%] hover:cursor-pointer');
