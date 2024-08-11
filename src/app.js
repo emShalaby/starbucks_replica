@@ -17,4 +17,4 @@ loadPayments();
 loadRewards();
 loadQuestions();
 loadFooter();
-loadSignUp();
+

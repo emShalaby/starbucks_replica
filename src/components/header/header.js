@@ -1,4 +1,5 @@
 import { loadSubheader } from './subheader.js';
+import { loadSignUp } from '../signup/signup.js';
 export function loadHeader() {
   const $header = $('<div>');
   const $container = $('<div>');
@@ -24,7 +25,7 @@ export function loadHeader() {
   const $hamburgerIcon = $('<img>');
   const $closeIcon=$('<img>');
   
-
+  $signUp.on('click',()=> loadSignUp());
   $hamburgerIcon.attr('class', 'more-icon block md:hidden hover:bg-[#F0F0F0] hover:rounded-[70%] hover:cursor-pointer');
   $closeIcon.addClass('hidden md:hidden hover:bg=[#F0F0F0] hover:rounded-[70%] hover:cursor-pointer');
   $header.attr('class', 'flex flex-col');

@@ -21,6 +21,7 @@ export function loadSignUp() {
   const $button = $('<button>');
   const $arrowIcon = $('<img>');
   const $span=$('<span>');
+  $button.attr('type','button');
   $cardsButton.attr('type', 'button');
   $cardsButton.on('click', (e) => {
     if ($('.cards-option').is(':hidden')) $('.cards-option').slideDown();
