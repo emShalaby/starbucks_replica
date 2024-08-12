@@ -1,0 +1,74 @@
+<nav class="bg-white text-sm ">
+  <div
+    class="flex justify-between h-[72px] md:h-[99px] md:justify-start max-w-[120em] m-auto md:px-[24px] px-[16px] md:px-[40px] relative header-div"
+  >
+    <div class="logo-container w-[48px] h-[100%] flex place-items-center">
+      <a href="https://www.starbucks.com" class="">
+        <img src="src/assets/svgs/starbucks_icon.svg" class="cursor-pointer" />
+      </a>
+    </div>
+    <div>
+      <ul class="md:flex h-[100%] ml-10 gap-5 hidden">
+        <li class="flex place-items-center">
+          <a href="" class="hover:text-green-700 cursor-pointer font-bold"
+            >MENU</a
+          >
+        </li>
+        <li class="flex items-center relative">
+          <a
+            href=""
+            class="hover:text-green-700 cursor-pointer align-text-center font-bold"
+            >REWARDS</a
+          >
+          <span class="absolute h-[6px] w-[100%] bg-green-700 bottom-0"></span>
+        </li>
+        <li class="flex place-items-center h-[100%]">
+          <a href="" class="hover:text-green-700 cursor-pointer font-bold"
+            >GIFT CARDS</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="md:flex hidden place-items-center ml-auto">
+      <span class=" ">
+        <a
+          href="https://www.starbucks.com/store-locator?map=39.635307,-101.337891,5z"
+          class="flex place-items-center hover:text-green-700"
+        >
+          <img src="src/assets/svgs/location_icon.svg" alt="" />
+          <p class="ml-1 md:mr-7">find a store</p>
+        </a>
+      </span>
+      <button
+        class="ml-5 hidden px-[18px] py-[5px] rounded-full border border-black text-black text-sm font-bold hover:bg-gray-100 transition duration-300 md:flex"
+      >
+        Sign in
+      </button>
+      <button
+        class="ml-5 hover:bg[#4C4C4C] transition duration-300 hidden px-[18px] py-[5px] bg-black text-white rounded-full text-sm font-bold md:flex sign-up-btn"
+      >
+        Join now
+      </button>
+    </div>
+    <div class="hamburger-icon md:hidden flex place-items-center ">
+      <button>
+        <img src="src/assets/svgs/more.svg" alt="">
+      </button>
+    </div>
+    <div class="hamburger-close  place-items-center hidden md:hidden ">
+      <button>
+        <img src="src/assets/svgs/close-icon.svg" alt="">
+      </button>
+    </div>
+  </div>
+  <div
+    class="hamburger-bg md:hidden w-[100vw] h-[100vh] bg-[#00000080] justify-center place-items-center hidden"
+  >
+    <div
+      class=" hamburger-menu border-t-2 border-solid border-t-[#EAEAEA] right-0 transition-transform duration-500 ease-in-out flex-col absolute self-end px-3 translate-x-full bg-white h-[100vh]  sm-nav w-4/5  z-10"
+    >
+    <ul class="flex flex-col font-bold pb-8 mt-4 sm-page-titles border-b-2 border-solid border-b-[#EAEAEA]"><li class="px-6 py-5">MENU</li><li class="px-6 py-5">REWARDS</li><li class="px-6 py-5">GIFT CARDS</li></ul>
+    <div class="flex gap-3 mt-5 px-3 sm-location-text"><img src="src/assets/svgs/location_icon.svg" style="width: 20px;"><div class="hover:text-[green] hover:cursor-pointer">Find a store</div></div>
+  </div>
+  </div>
+</nav>
