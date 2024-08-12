@@ -1,7 +1,7 @@
 // import { loadSignUp } from '../signup/signup.js';
 export function loadHeader() {
 
-  $('header').load('src/components/header/header.html', function() {
+  $('header').load('src/components/header/header.html nav', function() {
    
     $('.hamburger-icon').on('click',(e)=>{
       e.stopPropagation();
