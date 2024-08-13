@@ -12,9 +12,8 @@ import { loadStarBanner } from './components/starbanner/starbanner.js';
 loadHeader();
 loadSubheader();
 loadStarBanner();
-
 loadStart();
-// loadMenu();
+loadMenu();
 // loadExtras();
 // loadPayments();
 // loadRewards();
