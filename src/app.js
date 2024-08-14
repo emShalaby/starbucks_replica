@@ -17,7 +17,7 @@ loadMenu();
 loadExtras();
 loadPayments();
 loadRewards();
-// loadQuestions();
+loadQuestions();
 // loadFooter();
 
 
