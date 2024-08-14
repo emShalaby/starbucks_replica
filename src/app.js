@@ -14,7 +14,7 @@ loadSubheader();
 loadStarBanner();
 loadStart();
 loadMenu();
-// loadExtras();
+loadExtras();
 // loadPayments();
 // loadRewards();
 // loadQuestions();
