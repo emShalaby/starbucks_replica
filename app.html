@@ -1,37 +1,45 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starbucks® Rewards - Order Ahead, Endless Extras, Free Coffee: Starbucks...</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./src/app.js" type="module" defer></script>
+    <link rel="stylesheet" href="./src/app.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="src/assets/pngs/icons8-starbucks-64.png">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Starbucks</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="./src/app.js" type="module"  defer ></script>
-  <link rel="stylesheet" href="./src/app.css">
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
 
-
-</head>
-
-<body>
-<div id="app" class="app z-0 relative">
-  <header class="" ></header >
-    <main>
-      <div class="subheader  bg-[#1E3932] flex justify-center sticky top-0 z-30"></div>
-      <div class="star-banner bg-[#D4E9E2] flex justify-center overflow-hidden">
-      </div>
-      <div class="getting-started"></div>
-      <div class="menu flex"></div>
-      <div class="extras flex justify-center"></div>
-      <div class="payments" id="payments"></div>
-      <div class="rewards bg-[url('src/assets/pngs/rewards-bg.png')] md:p-9"></div>
-      <div class="questions flex md:justify-center py-20 px-5">
-
-      </div>
-    </main >
-</div>
-</body>
-
+  <body>
+    <div id="app" class="app z-0 relative">
+      <header class=""></header>
+      <main>
+        <div
+          class="subheader bg-[#1E3932] flex justify-center sticky top-0 z-30"
+        ></div>
+        <div
+          class="star-banner bg-[#D4E9E2] flex justify-center overflow-hidden"
+        ></div>
+        <div class="getting-started"></div>
+        <div class="menu flex"></div>
+        <div class="extras flex justify-center"></div>
+        <div class="payments" id="payments"></div>
+        <div
+          class="rewards bg-[url('src/assets/pngs/rewards-bg.png')] md:p-9"
+        ></div>
+        <div class="questions flex flex-col md:place-items-center py-20"></div>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
 </html>

@@ -18,6 +18,6 @@ loadExtras();
 loadPayments();
 loadRewards();
 loadQuestions();
-// loadFooter();
+loadFooter();
 
 
