@@ -6,7 +6,6 @@ import { loadRewards } from './components/rewards-banner/rewards.js';
 import { loadPayments } from './components/payments/payments.js';
 import { loadMenu } from './components/menu/menu.js';
 import { loadQuestions } from './components/questions/questions.js';
-import { loadSignUp } from './components/signup/signup.js';
 import { loadSubheader } from './components/header/subheader.js';
 import { loadStarBanner } from './components/starbanner/starbanner.js';
 loadHeader();
